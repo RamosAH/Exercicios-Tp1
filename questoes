@@ -1,0 +1,181 @@
+'''
+#Questão 1
+print("-----Questão 1-----")
+tupla = ((1,5,6,10), (2,4,6,8), (2,), (10,20,30,10,80))
+results = []
+
+for i in tupla:
+  soma = sum(i)
+  print(f"{tupla.index(i)}:{soma}")
+  results.append(soma)
+
+print(f"Média total: {sum(results)/len(tupla)}")
+#------------------------------------------------
+
+#Questão 2
+print("-----Questão 2-----")
+n = 6
+list = []
+for i in range(1,n+1):
+  resultado = i/(i*2-1)
+  print(f"{i}/{(i*2-1)}")
+  list.append(resultado)
+  
+print(f"Soma da série: {sum(list)}")
+#------------------------------------------------
+
+#Questão 3
+print("-----Questão 3-----")
+t = [1, 2, 3, 4, 5, 6]
+
+def cumsum(t):
+  new_list = []
+  result = 0
+  for i in t:
+    result = result + i
+    new_list.append(result)
+  return new_list
+
+print(cumsum(t))
+
+#------------------------------------------------
+
+#Questão 4
+print("-----Questão 4-----")
+
+from unidecode import unidecode
+
+def verificar(text):
+  text = text.lower()
+  text = text.replace(" ", "").replace("-", "").replace(",","")
+  text = unidecode(text)
+  text_reverse = text[::-1]
+  if text == text_reverse:
+    return "é um palíndromo"
+  else:
+    return "não é um palíndromo"
+
+print(verificar("Socorram-me subi no ônibus em Marrocos"))
+
+#------------------------------------------------
+
+#Questão 5
+print("-----Questão 5-----")
+import random
+
+
+#------------------------------------------------
+
+#Questão 6
+print("-----Questão 6-----")
+
+def vetor_resultante(v1, v2):
+  if(len(v1) != len(v2)):
+    print("Calculo impossível")
+    return None
+  vr= tuple(map(lambda v1, v2: v1 + v2, v1, v2))
+  return vr
+
+v1 = (-1, 5, 0.5)
+v2 = (3, 10 ,3)
+print(vetor_resultante(v1, v2))
+#------------------------------------------------
+
+#Questão 7
+print("-----Questão 7-----")
+numeros = []
+
+for i in range(10):
+  num = input("Insira um número: ")
+  numeros.append(num)
+
+print(f"Número de valores diferentes: {len(set(numeros))}")
+#------------------------------------------------
+
+#Questão 8
+print("-----Questão 8-----")
+vetor = []
+for i in range(5):
+    vetor.append(int(input("Insira um número: ")))
+
+valor_search = int(input("Digite o número a ser procurado: "))
+
+posicao = -1
+for i in range(len(vetor)):
+    if vetor[i] == valor_search:
+        posicao = i
+        break
+
+if posicao != -1:
+    print(f"O valor {valor_search} aparece pela primeira vez na posição {posicao}")
+else:
+    print(f"O valor {valor_search} não foi encontrado no vetor")
+#------------------------------------------------
+
+#Questão 9
+print("-----Questão 9-----")
+
+import random
+
+dado = []
+for i in range(50):
+    dado.append(random.randint(1, 6))
+
+ocorrencias_6 = dado.count(6)
+
+percentual_6 = (ocorrencias_6 / 50) * 100
+
+print(f"Percentual de ocorrências da face 6 em 50 lançamentos: {percentual_6}%")
+#------------------------------------------------
+
+#Questão 10
+print("-----Questão 10-----")
+
+vet = []
+for i in range(20):
+    vet.append(float(input("Insira um número: ")))
+
+pos = []
+for valor in vet:
+    if valor > 0:
+        pos.append(valor)
+
+semdup = []
+for valor in pos:
+    if valor not in semdup:
+        semdup.append(valor)
+
+print(f"Vetor vet: {vet}")
+print(f"Vetor pos: {pos}")
+print(f"Vetor semdup: {semdup}")
+#------------------------------------------------
+
+#Questão 11
+print("-----Questão 11-----")
+lista = [1, 67, 78, 34, 90, 876, 0, 12, 8, 3, 56, 987, 3, 2, 45, 12, 10, 45]
+n = 3
+
+print(f"Número de vezes que o '{n}' aparece: {lista.count(n)}")
+#------------------------------------------------
+
+#Questão 12
+print("-----Questão 12-----")
+
+cartas = list(map(int, input().split()))
+
+ordem_crescente = True
+ordem_decrescente = True
+for i in range(1, 5):
+    if cartas[i] > cartas[i-1]:
+        ordem_decrescente = False
+    elif cartas[i] < cartas[i-1]:
+        ordem_crescente = False
+
+if ordem_crescente:
+    print('C')
+elif ordem_decrescente:
+    print('D')
+else:
+    print('N')
+#------------------------------------------------
+'''
